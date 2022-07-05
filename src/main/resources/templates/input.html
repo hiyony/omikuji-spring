@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Omikuji Web Service</title>
+</head>
+<body>
+	<h1>Omikuji Web Servie</h1>
+	
+	<form method = "POST">
+		<span>お誕生日を入力してください！</span>
+		<input type = "text" id = "birthday" name = "birthday" placeholder = "yyyyMMddの形式">
+		<input type = "submit" name = "btn" value = "確認"
+			formaction="/output">
+		
+		<br><br>
+		上にお誕生日を入力してクリックしてください！<br>
+		<input type = "submit" name = "btn" value = "過去半年の結果リスト"
+				formmethod = "POST">
+		<input type = "submit" name = "btn" value = "過去結果のおみくじ割合"
+				formmethod = "POST">
+	</form>
+</body>
+</html>
