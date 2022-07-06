@@ -1,14 +1,13 @@
 package com.omikuji.spring.form;
 
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.validator.constraints.Range;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 public class InputForm {
 	
-	@NotBlank(message = "誕生日を入力してください！")
-	@Range(min=1, max=8)
+	@NotNull
+	@Size(min=8, max=8)
 	private String birthday;
 
 	public String getBirthday() {
@@ -17,6 +16,11 @@ public class InputForm {
 
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
+	}
+
+	@Override
+	public String toString() {
+		return "InputForm [birthday=" + birthday + "]";
 	}
 
 }
