@@ -1,43 +1,38 @@
 package com.omikuji.spring.domain.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.seasar.doma.Column;
+import org.seasar.doma.Entity;
+import org.seasar.doma.GeneratedValue;
+import org.seasar.doma.GenerationType;
+import org.seasar.doma.Id;
+import org.seasar.doma.Table;
 
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Getter
-@NoArgsConstructor
 @Entity
+@Table(name = "fortunemaster")
+@Getter
+@Setter
 public class Fortunemaster {
+	
+    @Column(name = "unseiname")
+	public String unseiname;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(length = 2147483647, nullable = true, unique = false)
-	private String unseicode;
+    @Column(name = "unseicode")
+	public String unseicode;
 	
-	@Column(length = 2147483647, nullable = true, unique = false)
-	private String unseiname;
+	@Column(name = "renewalwriter")
+	public String renewalwriter;	
 	
-	@Column(length = 2147483647, nullable = true, unique = false)
-	private String renewalwriter;
+	@Column(name = "renewaldate")
+	public String renewaldate;	
 	
-	@Column(length = 2147483647, nullable = true, unique = false)
-	private String renewaldate;
+	@Column(name = "unseiwriter")
+	public String unseiwriter;	
 	
-	@Column(length = 2147483647, nullable = true, unique = false)
-	private String unseiwriter;
-	
-	@Column(length = 2147483647, nullable = true, unique = false)
-	private String unseiwritedate;
-	
-	@Builder
-	public Fortunemaster(String unseicode, String unseiname) {
-		this.unseicode = unseicode;
-		this.unseiname = unseiname;
-	}
+	@Column(name = "unseiwritedate")
+	public String unseiwritedate;
 }
